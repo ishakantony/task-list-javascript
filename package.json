@@ -1,0 +1,60 @@
+{
+  "name": "task-list-javascript",
+  "version": "1.0.0",
+  "description": "Simple javascript task list application",
+  "repository": "git@github.com:ishakantony/task-list-javascript.git",
+  "author": "Ishak Antony Darmawan",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn clean && parcel public/*.html --out-dir development -p 3000",
+    "build": "parcel build public/*.html --out-dir dist --public-url ./",
+    "clean": "rimraf ./development && rimraf -rf ./.cache"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.{html,js,css,scss}": "prettier --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "rules": {},
+    "env": {
+      "es6": true,
+      "browser": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    }
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.13",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.1",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "materialize-css": "^1.0.0-rc.2"
+  }
+}

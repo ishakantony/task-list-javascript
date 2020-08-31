@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+  web:
+    image: parcel-javascript-starter
+    build:
+      context: .
+      dockerfile: development.Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./src
+        target: /app/src
+      - type: bind
+        source: ./public
+        target: /app/public

@@ -1,0 +1,10 @@
+@import '~materialize-css/sass/materialize';
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
